@@ -1,6 +1,6 @@
 <?php
 
-namespace DynImageDIC;
+namespace DynImageContainerLoader;
 
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

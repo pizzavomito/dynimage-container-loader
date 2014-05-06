@@ -1,6 +1,6 @@
 <?php
 
-namespace DynImageDIC;
+namespace DynImageContainerLoader;
 
 
 use Symfony\Component\Config\ConfigCache;
