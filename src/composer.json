@@ -1,0 +1,26 @@
+{
+    "name": "dynimage-container-loader/dynimage-container-loader",
+    "description": "...",
+    "keywords": ["dynimage"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pascal Roux",
+            "email": "pascal.roux.fr@gmail.com"
+        }
+    ],
+    "require": {
+
+        "symfony/dependency-injection": "2.2.*@dev",
+        "symfony/config"        : "~2.3",
+        "dynimage/dynimage": "dev-master"
+       
+        
+    },
+
+    "autoload": {
+        "psr-0": { 
+            "DynImageContainerLoader": "src/"
+                }
+    }
+}

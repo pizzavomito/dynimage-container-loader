@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <parameters>
+      
+        
+        <parameter key="dynimage.event.before.create.image" type="constant">DynImage\Events::BEFORE_CREATE_IMAGE</parameter>  
+        <parameter key="dynimage.event.after.create.image" type="constant">DynImage\Events::AFTER_CREATE_IMAGE</parameter>        
+        <parameter key="dynimage.event.early.apply.filter" type="constant">DynImage\Events::EARLY_APPLY_FILTER</parameter>       
+        <parameter key="dynimage.event.late.apply.filter" type="constant">DynImage\Events::LATE_APPLY_FILTER</parameter>       
+        <parameter key="dynimage.event.finish.create.image" type="constant">DynImage\Events::FINISH_CREATE_IMAGE</parameter>       
+  
+        <parameter key="dynimage.thumb_class" >DynImage\Filter\Thumb\Thumb</parameter>
+        <parameter key="dynimage.watermark_class" >DynImage\Filter\Watermark\Watermark</parameter>
+        <parameter key="dynimage.polaroid_class" >DynImage\Filter\Polaroid\Polaroid</parameter>
+        <parameter key="dynimage.colorize_class" >DynImage\Filter\Colorize\Colorize</parameter>
+        <parameter key="dynimage.border_class" >DynImage\Filter\Border\Border</parameter>
+        <parameter key="dynimage.blur_class" >DynImage\Filter\Blur\Blur</parameter>
+        <parameter key="dynimage.reflect_class" >DynImage\Filter\Reflect\Reflect</parameter>
+        <parameter key="dynimage.gamma_class" >DynImage\Filter\Gamma\Gamma</parameter>
+        <parameter key="dynimage.grayscale_class" >DynImage\Filter\Grayscale\Grayscale</parameter>
+        <parameter key="dynimage.shadow_class" >DynImage\Filter\Shadow\Shadow</parameter>
+        <parameter key="dynimage.resize_class" >DynImage\Filter\Resize\Resize</parameter>
+        <parameter key="dynimage.rotate_class" >DynImage\Filter\Rotate\Rotate</parameter>
+        <parameter key="dynimage.crop_class" >DynImage\Filter\Crop\Crop</parameter>
+        
+        <parameter key="dynimage.black" >#000000</parameter>
+        <parameter key="dynimage.white" >#ffffff</parameter>
+        <parameter key="dynimage.orange" >#ff9900</parameter>
+        <parameter key="dynimage.red" >#ff0000</parameter>
+        <parameter key="dynimage.pink" >#ff69b4</parameter>
+        <parameter key="dynimage.green" >#00ff00</parameter>
+        <parameter key="dynimage.yellow" >#ffff00</parameter>
+        <parameter key="dynimage.gray" >#d3d3d3</parameter>
+        <parameter key="dynimage.blue" >#0000ff</parameter>
+        <parameter key="dynimage.magenta" >#ff00ff</parameter>
+        <parameter key="dynimage.purple" >#551a8b</parameter>
+        
+        <parameter key="dynimage.lib_imagick" >Imagick</parameter>
+        <parameter key="dynimage.lib_gmagick" >Gmagick</parameter>
+        <parameter key="dynimage.lib_gd" >Gd</parameter>
+        <parameter key="dynimage.transformer_class" >DynImage\Transformer</parameter>
+    </parameters>
+       
+    <services>
+
+        <service id="dynimage.thumb" class="%dynimage.thumb_class%">
+            
+        </service>
+        <service id="dynimage.watermark" class="%dynimage.watermark_class%">
+            
+        </service>
+        <service id="dynimage.polaroid" class="%dynimage.polaroid_class%">
+            
+        </service>
+        <service id="dynimage.colorize" class="%dynimage.colorize_class%">
+            
+        </service>
+        <service id="dynimage.border" class="%dynimage.border_class%">
+            
+        </service>
+        <service id="dynimage.blur" class="%dynimage.blur_class%">
+            
+        </service>
+        <service id="dynimage.reflect" class="%dynimage.reflect_class%">
+            
+        </service>
+        <service id="dynimage.gamma" class="%dynimage.gamma_class%">
+            
+        </service>
+        <service id="dynimage.grayscale" class="%dynimage.grayscale_class%">
+            
+        </service>
+        <service id="dynimage.shadow" class="%dynimage.shadow_class%">
+            
+        </service>
+        <service id="dynimage.resize" class="%dynimage.resize_class%">
+            
+        </service>
+        <service id="dynimage.rotate" class="%dynimage.rotate_class%">
+            
+        </service>
+        <service id="dynimage.crop" class="%dynimage.crop_class%">
+            
+        </service>
+       
+
+       
+    </services>
+</container>
