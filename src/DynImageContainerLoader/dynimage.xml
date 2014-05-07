@@ -10,19 +10,21 @@
         <parameter key="dynimage.event.late.apply.filter" type="constant">DynImage\Events::LATE_APPLY_FILTER</parameter>       
         <parameter key="dynimage.event.finish.create.image" type="constant">DynImage\Events::FINISH_CREATE_IMAGE</parameter>       
   
-        <parameter key="dynimage.thumb_class" >DynImage\Filter\Thumb\Thumb</parameter>
-        <parameter key="dynimage.watermark_class" >DynImage\Filter\Watermark\Watermark</parameter>
-        <parameter key="dynimage.polaroid_class" >DynImage\Filter\Polaroid\Polaroid</parameter>
-        <parameter key="dynimage.colorize_class" >DynImage\Filter\Colorize\Colorize</parameter>
-        <parameter key="dynimage.border_class" >DynImage\Filter\Border\Border</parameter>
-        <parameter key="dynimage.blur_class" >DynImage\Filter\Blur\Blur</parameter>
-        <parameter key="dynimage.reflect_class" >DynImage\Filter\Reflect\Reflect</parameter>
-        <parameter key="dynimage.gamma_class" >DynImage\Filter\Gamma\Gamma</parameter>
-        <parameter key="dynimage.grayscale_class" >DynImage\Filter\GrayScale\GrayScale</parameter>
-        <parameter key="dynimage.shadow_class" >DynImage\Filter\Shadow\Shadow</parameter>
-        <parameter key="dynimage.resize_class" >DynImage\Filter\Resize\Resize</parameter>
-        <parameter key="dynimage.rotate_class" >DynImage\Filter\Rotate\Rotate</parameter>
-        <parameter key="dynimage.crop_class" >DynImage\Filter\Crop\Crop</parameter>
+        <parameter key="dynimage.thumb_class" >DynImage\Filter\Thumb</parameter>
+        <parameter key="dynimage.colorize_class" >DynImage\Filter\Colorize</parameter>
+        <parameter key="dynimage.border_class" >DynImage\Filter\Border</parameter>
+        <parameter key="dynimage.blur_class" >DynImage\Filter\Blur</parameter>
+        <parameter key="dynimage.reflect_class" >DynImage\Filter\Reflect</parameter>
+        <parameter key="dynimage.gamma_class" >DynImage\Filter\Gamma</parameter>
+        <parameter key="dynimage.grayscale_class" >DynImage\Filter\GrayScale</parameter>
+        <parameter key="dynimage.resize_class" >DynImage\Filter\Resize</parameter>
+        <parameter key="dynimage.rotate_class" >DynImage\Filter\Rotate</parameter>
+        <parameter key="dynimage.crop_class" >DynImage\Filter\Crop</parameter>
+        
+        <parameter key="dynimage.watermark_text_class" >DynImage\Filter\Experimental\WatermarkText</parameter>
+        <parameter key="dynimage.polaroid_class" >DynImage\Filter\Experimental\Polaroid</parameter>
+        <parameter key="dynimage.dropshadow_class" >DynImage\Filter\Experimental\DropShadow</parameter>
+        <parameter key="dynimage.roundcorners_class" >DynImage\Filter\Experimental\RoundCorners</parameter>
         
         <parameter key="dynimage.black" >#000000</parameter>
         <parameter key="dynimage.white" >#ffffff</parameter>
@@ -36,52 +38,113 @@
         <parameter key="dynimage.magenta" >#ff00ff</parameter>
         <parameter key="dynimage.purple" >#551a8b</parameter>
         
-        <parameter key="dynimage.lib_imagick" >Imagick</parameter>
-        <parameter key="dynimage.lib_gmagick" >Gmagick</parameter>
-        <parameter key="dynimage.lib_gd" >Gd</parameter>
+        <parameter key="dynimage.driver_imagick" >Imagick</parameter>
+        <parameter key="dynimage.driver_gmagick" >Gmagick</parameter>
+        <parameter key="dynimage.driver_gd" >Gd</parameter>
         <parameter key="dynimage.transformer_class" >DynImage\Transformer</parameter>
+        
+        <parameter key="thumb.arguments" type="collection">
+            <parameter key="width">100</parameter>
+            <parameter key="height">100</parameter>
+        </parameter>
+        
+        <parameter key="watermark_text.arguments" type="collection">
+            <parameter key="text">Copyright</parameter>
+        </parameter>
+        
+        <parameter key="polaroid.arguments" type="collection">
+            <parameter key="angle">0</parameter>
+        </parameter>
+        
+        <parameter key="colorize.arguments" type="collection">
+            <parameter key="color">%dynimage.red%</parameter>
+        </parameter>
+        
+        <parameter key="border.arguments" type="collection">
+            <parameter key="color">%dynimage.black%</parameter>
+            <parameter key="width">6</parameter>
+            <parameter key="height">6</parameter>
+        </parameter>
+        
+        <parameter key="border.arguments" type="collection">
+            <parameter key="color">%dynimage.black%</parameter>
+            <parameter key="width">6</parameter>
+            <parameter key="height">6</parameter>
+        </parameter>
+        
+        <parameter key="blur.arguments" type="collection">
+            <parameter key="sigma">3</parameter>
+        </parameter>
+        
+        <parameter key="reflect.arguments" type="collection">
+            <parameter key="color">%dynimage.white%</parameter>
+        </parameter>
+        
+        <parameter key="gamma.arguments" type="collection">
+            <parameter key="correction">1.3</parameter>
+        </parameter>
+        
+        <parameter key="dropshadow.arguments" type="collection">
+            <parameter key="color">%dynimage.black%</parameter>
+        </parameter>
+        
+        <parameter key="resize.arguments" type="collection">
+            <parameter key="width">100</parameter>
+            <parameter key="height">100</parameter>
+        </parameter>
+        
+        <parameter key="rotate.arguments" type="collection">
+            <parameter key="angle">0</parameter>
+        </parameter>
+        
+        <parameter key="crop.arguments" type="collection">
+            <parameter key="width">100</parameter>
+            <parameter key="height">100</parameter>
+        </parameter>
+
+        
     </parameters>
        
     <services>
 
         <service id="dynimage.thumb" class="%dynimage.thumb_class%">
-            
+            <argument>%thumb.arguments%</argument>
         </service>
-        <service id="dynimage.watermark" class="%dynimage.watermark_class%">
-            
+        <service id="dynimage.watermark_text" class="%dynimage.watermark_text_class%">
+            <argument>%watermark_text.arguments%</argument>
         </service>
         <service id="dynimage.polaroid" class="%dynimage.polaroid_class%">
-            
+            <argument>%polaroid.arguments%</argument>
         </service>
         <service id="dynimage.colorize" class="%dynimage.colorize_class%">
-            
+            <argument>%colorize.arguments%</argument>
         </service>
         <service id="dynimage.border" class="%dynimage.border_class%">
-            
+            <argument>%border.arguments%</argument>
         </service>
         <service id="dynimage.blur" class="%dynimage.blur_class%">
-            
+            <argument>%blur.arguments%</argument>
         </service>
         <service id="dynimage.reflect" class="%dynimage.reflect_class%">
-            
+            <argument>%reflect.arguments%</argument>
         </service>
         <service id="dynimage.gamma" class="%dynimage.gamma_class%">
-            
+            <argument>%gamma.arguments%</argument>
         </service>
         <service id="dynimage.grayscale" class="%dynimage.grayscale_class%">
-            
+           
         </service>
-        <service id="dynimage.shadow" class="%dynimage.shadow_class%">
-            
+        <service id="dynimage.dropshadow" class="%dynimage.dropshadow_class%">
+            <argument>%dropshadow.arguments%</argument>
         </service>
         <service id="dynimage.resize" class="%dynimage.resize_class%">
-            
+            <argument>%resize.arguments%</argument>
         </service>
         <service id="dynimage.rotate" class="%dynimage.rotate_class%">
-            
+            <argument>%rotate.arguments%</argument>
         </service>
         <service id="dynimage.crop" class="%dynimage.crop_class%">
-            
+            <argument>%crop.arguments%</argument>
         </service>
        
 
