@@ -32,13 +32,10 @@ class ContainerLoader {
             $loader = new XmlFileLoader($container_builder, new FileLocator(dirname($filename)));
 
             $loader->load(basename($filename));
-            /**/
-            //permet d'ajouter imageManager en tant que service dans le module
+
             $extension = new Extension();
             $container_builder->registerExtension($extension);
             $container_builder->loadFromExtension($extension->getAlias());
-            //$container->addCompilerPass(new CompilerPass, PassConfig::TYPE_BEFORE_OPTIMIZATION);
-            /**/
 
             if (!empty($extensions)) {
                 foreach ($extensions as $extension) {
