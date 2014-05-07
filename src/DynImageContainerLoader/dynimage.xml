@@ -4,8 +4,6 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <parameters>
-      
-        
         <parameter key="dynimage.event.before.create.image" type="constant">DynImage\Events::BEFORE_CREATE_IMAGE</parameter>  
         <parameter key="dynimage.event.after.create.image" type="constant">DynImage\Events::AFTER_CREATE_IMAGE</parameter>        
         <parameter key="dynimage.event.early.apply.filter" type="constant">DynImage\Events::EARLY_APPLY_FILTER</parameter>       
