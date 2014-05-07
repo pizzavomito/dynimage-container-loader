@@ -20,7 +20,7 @@
         <parameter key="dynimage.blur_class" >DynImage\Filter\Blur\Blur</parameter>
         <parameter key="dynimage.reflect_class" >DynImage\Filter\Reflect\Reflect</parameter>
         <parameter key="dynimage.gamma_class" >DynImage\Filter\Gamma\Gamma</parameter>
-        <parameter key="dynimage.grayscale_class" >DynImage\Filter\Grayscale\Grayscale</parameter>
+        <parameter key="dynimage.grayscale_class" >DynImage\Filter\GrayScale\GrayScale</parameter>
         <parameter key="dynimage.shadow_class" >DynImage\Filter\Shadow\Shadow</parameter>
         <parameter key="dynimage.resize_class" >DynImage\Filter\Resize\Resize</parameter>
         <parameter key="dynimage.rotate_class" >DynImage\Filter\Rotate\Rotate</parameter>
