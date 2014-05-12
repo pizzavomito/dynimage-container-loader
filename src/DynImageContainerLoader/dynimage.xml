@@ -43,7 +43,7 @@
         <parameter key="dynimage.driver_imagick" >Imagick</parameter>
         <parameter key="dynimage.driver_gmagick" >Gmagick</parameter>
         <parameter key="dynimage.driver_gd" >Gd</parameter>
-        <parameter key="dynimage.transformer_class" >DynImage\Transformer</parameter>
+       
         
         <parameter key="thumb.arguments" type="collection">
             <parameter key="width">100</parameter>
