@@ -4,12 +4,13 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <parameters>
-        <parameter key="dynimage.event.before.create.image" type="constant">DynImage\Events::BEFORE_CREATE_IMAGE</parameter>  
+        
         <parameter key="dynimage.event.after.create.image" type="constant">DynImage\Events::AFTER_CREATE_IMAGE</parameter>        
         <parameter key="dynimage.event.early.apply.filter" type="constant">DynImage\Events::EARLY_APPLY_FILTER</parameter>       
         <parameter key="dynimage.event.late.apply.filter" type="constant">DynImage\Events::LATE_APPLY_FILTER</parameter>       
         <parameter key="dynimage.event.finish.create.image" type="constant">DynImage\Events::FINISH_CREATE_IMAGE</parameter>       
   
+        <parameter key="dynimage.class" >DynImage\DynImage</parameter>
         <parameter key="dynimage.thumb_class" >DynImage\Filter\Thumb</parameter>
         <parameter key="dynimage.colorize_class" >DynImage\Filter\Colorize</parameter>
         <parameter key="dynimage.border_class" >DynImage\Filter\Border</parameter>
@@ -107,7 +108,8 @@
     </parameters>
        
     <services>
-
+        
+        
         <service id="dynimage.thumb" class="%dynimage.thumb_class%">
             <argument>%thumb.arguments%</argument>
         </service>

@@ -2,13 +2,11 @@
 
 namespace DynImageContainerLoader;
 
-
 use Symfony\Component\Config\ConfigCache;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 
 class ContainerLoader {
 
@@ -39,7 +37,7 @@ class ContainerLoader {
 
             if (!empty($extensions)) {
                 foreach ($extensions as $extension) {
-                    
+
                     $container_builder->registerExtension($extension);
                     $container_builder->loadFromExtension($extension->getAlias());
                 }
