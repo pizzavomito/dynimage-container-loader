@@ -10,7 +10,7 @@ use Symfony\Component\Config\FileLocator;
 
 class ContainerLoader {
 
-    static public function load($filename, $cache_dir, $debug = false, $extensions = array()) {
+    static public function load($filename, $cache_dir, $debug = false, $extensions = array(), $reload=false) {
 
 
         $file = pathinfo($filename, PATHINFO_FILENAME);
@@ -19,7 +19,7 @@ class ContainerLoader {
 
         $config = new ConfigCache($cachedfilename . '.php', $debug);
 
-        if (!$config->isFresh()) {
+        if (!$config->isFresh() || $reload) {
             $container_builder = new ContainerBuilder();
 
             if (!file_exists($filename)) {
