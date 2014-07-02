@@ -10,12 +10,16 @@ use Symfony\Component\Config\FileLocator;
 
 class ContainerLoader {
 
-    static public function load($filename, $cache_dir, $debug = false, $extensions = array(), $reload=false) {
+    static public function load($filename, $cache_dir, $debug = false, $extensions = array(), $reload=false, $className=null) {
 
-
+       
         $file = pathinfo($filename, PATHINFO_FILENAME);
         $cachedfilename = $cache_dir . '/' . $file;
-        $className = str_replace('.', '', $file);
+        
+        if (is_null($className)) {
+           $className = str_replace('.', '', $file);
+        }
+        
 
         $config = new ConfigCache($cachedfilename . '.php', $debug);
 
